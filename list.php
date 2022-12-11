@@ -1,10 +1,10 @@
 <?php
 require 'redirect.php';
+require 'connection_pdo.php';
    // Vérifier si le formulaire est soumis 
    if ( isset( $_POST['submit'] ) ) {
        /*Connexion base de données local*/
        try {
-           $pdo = new PDO('mysql:host=localhost:8889;dbname=ToDoList', 'root', 'root');
            $do = $_POST['do'];
 
            $sql = "INSERT INTO list (id,do) VALUES (UUID(),?)";
